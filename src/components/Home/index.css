@@ -1,0 +1,12 @@
+ul{
+    list-style-type: none;
+}
+.row{
+    display: flex;
+}
+.half{
+    width: 50%;
+}
+.mar{
+    margin: 25px;
+}

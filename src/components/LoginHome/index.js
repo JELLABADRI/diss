@@ -20,7 +20,7 @@ class LoginHome extends Component {
     }
 
     getApi = async () => {
-        const url = "http://localhost:5000/todos";
+        const url = "https://oscowlbackend.onrender.com/todos";
         try {
             const response = await fetch(url);
             if (!response.ok) {  // Check if response is successful
@@ -37,7 +37,7 @@ class LoginHome extends Component {
 
     submit= async () => {
         const {inp,statusval}=this.state;
-        const url=`http://localhost:5000/todos`;
+        const url=`https://oscowlbackend.onrender.com/todos`;
         const options={
             method:"POST",
             headers: { "Content-Type": "application/json" },
@@ -52,7 +52,7 @@ class LoginHome extends Component {
     }
 
     delete= async (id) => {
-       const url=`http://localhost:5000/todos/${id}`;
+       const url=`https://oscowlbackend.onrender.com/todos/${id}`;
        const options={
         method:"DELETE",
         headers: { "Content-Type": "application/json" },
@@ -65,7 +65,7 @@ class LoginHome extends Component {
     }
     stachan = async (val,id) => {
         console.log("in statchange")
-        const url=`http://localhost:5000/todos/${id}`;
+        const url=`https://oscowlbackend.onrender.com/todos/${id}`;
         const options={
             method:"PUT",
             headers: { "Content-Type": "application/json" },

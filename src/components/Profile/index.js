@@ -20,7 +20,7 @@ class Profile extends Component{
     }
     namesub = async event => {
         const {name,changename}=this.state
-        const url=`http://localhost:5000/todos/profile`;
+        const url=`https://oscowlbackend.onrender.com/todos/profile`;
         const options={
             method:"PUT",
             headers: { "Content-Type": "application/json" },
@@ -32,7 +32,7 @@ class Profile extends Component{
     }
     passwordsub = async event => {
         const {name,password}=this.state
-        const url=`http://localhost:5000/todos/profile`;
+        const url=`https://oscowlbackend.onrender.com/todos/profile`;
         const options={
             method:"PUT",
             headers: { "Content-Type": "application/json" },

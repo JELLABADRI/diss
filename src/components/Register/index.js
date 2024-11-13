@@ -11,7 +11,7 @@ class Register extends Component{
     subm= async event => {
         event.preventDefault();
         const {name,password}=this.state
-        const url="http://localhost:5000/register"
+        const url="https://oscowlbackend.onrender.com/register"
         const userDetails={name,password}
         const options={method:"POST",
             headers: { "Content-Type": "application/json" },
@@ -26,7 +26,7 @@ class Register extends Component{
         }
         else{
             const {history}=this.props
-            history.replace("/register")
+            window.location.replace("/register")
             console.log("register failed")
         }
     }

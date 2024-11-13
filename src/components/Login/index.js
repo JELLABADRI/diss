@@ -14,7 +14,7 @@ class Login extends Component{
     subm= async event => {
         event.preventDefault();
         const {name,password}=this.state
-        const url="http://localhost:5000/login"
+        const url=`https://oscowlbackend.onrender.com/login`
         const userDetails={name,password}
         const options={method:"POST",
             headers: { "Content-Type": "application/json" },

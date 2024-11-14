@@ -21,12 +21,12 @@ class Register extends Component{
         if(response.ok){
             console.log(response)
             const {history}=this.props
-            window.location.replace("/login")
+            history.replace("/login")
             console.log("success")
         }
         else{
             const {history}=this.props
-            window.location.replace("/register")
+            history.replace("/register")
             console.log("register failed")
         }
     }

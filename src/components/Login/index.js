@@ -1,6 +1,7 @@
-import { Component } from "react"
+import { Component,Navigate } from "react"
 import Cookies from 'js-cookie'
 import "./index.css"
+import { useParams } from "react-router-dom"
 
 class Login extends Component{
     state={name:"",password:""}
@@ -22,15 +23,16 @@ class Login extends Component{
         }
         const response=await fetch(url,options)
         if(response.ok){
+            const {history}=useParams;
             const { jwtToken }=await response.json()
             Cookies.set('jwt_token', jwtToken, {
                 expires: 30,
               })
-            window.location.replace("/todos")
+            history.replace("/todos");
         }
         else{
             const {history}=this.props
-            window.location.replace("/register")
+            history.replace("/register");
             console.log("failed")
         }
     }

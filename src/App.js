@@ -12,10 +12,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/profile" exact element={<Profile />} />
+        <Route path="/profile" exact element={<ProtectedRoute><Profile /></ProtectedRoute>} />
         <Route path="/register" exact element={<Register />} />
         <Route path="/login" exact element={<Login />} />
-        <Route path="/todos" exact element={<LoginHome />} />
+        <Route path="/todos" exact element={<ProtectedRoute><LoginHome /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );

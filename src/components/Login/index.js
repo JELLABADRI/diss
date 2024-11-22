@@ -23,16 +23,18 @@ class Login extends Component{
         }
         const response=await fetch(url,options)
         if(response.ok){
-            const {history}=useParams;
+            const {history}=this.props;
             const { jwtToken }=await response.json()
             Cookies.set('jwt_token', jwtToken, {
                 expires: 30,
               })
-            history.replace("/todos");
+            return <Navigate to="/todos" />;
+            //history.replace("/todos");
         }
         else{
             const {history}=this.props
-            history.replace("/register");
+            return <Navigate to="/register" />;
+            //history.replace("/register");
             console.log("failed")
         }
     }
